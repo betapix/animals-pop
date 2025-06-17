@@ -20,7 +20,7 @@ import com.nativegame.nattyengine.ui.GameDialog;
 public class AdCoinDialog extends GameDialog implements View.OnClickListener,
         AdManager.AdRewardListener {
 
-    private static final int REWARD_COIN = 50;
+    private static final int REWARD_COIN = 30;
 
     private int mSelectedId;
 
