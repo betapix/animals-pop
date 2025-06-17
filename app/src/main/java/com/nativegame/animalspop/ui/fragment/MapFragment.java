@@ -36,7 +36,7 @@ import java.util.ArrayList;
 public class MapFragment extends GameFragment implements View.OnClickListener,
         TransitionEffect.OnTransitionListener {
 
-    private static final int TOTAL_LEVEL = 15;
+    private static final int TOTAL_LEVEL = 100;
 
     private DatabaseHelper mDatabaseHelper;
     private LivesTimer mLivesTimer;
