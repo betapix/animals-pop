@@ -72,6 +72,23 @@ public class MainActivity extends GameActivity {
             // Start the menu bgm
             getSoundManager().loadMusic(R.raw.happy_and_joyful_children);
         }
+
+        // Start periodic app open ads
+        MyApplication.getInstance().getAppOpenAdManager().startPeriodicAds();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Show app open ad when app is resumed
+        MyApplication.getInstance().getAppOpenAdManager().showAdIfAvailable(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // Stop periodic app open ads
+        MyApplication.getInstance().getAppOpenAdManager().stopPeriodicAds();
     }
 
     public DatabaseHelper getDatabaseHelper() {
