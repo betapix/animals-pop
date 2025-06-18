@@ -69,28 +69,28 @@ public class GameController extends GameObject implements AdManager.AdRewardList
                 .setEmissionRate(30)
                 .setEmissionPositionX(0)
                 .setEmissionRangeY(game.getScreenHeight() / 3f, game.getScreenHeight() * 3 / 4f)
-                .setSpeedX(1000, 1500)
+                .setSpeedX(0, 1500)
                 .setSpeedY(-4000, -3000)
                 .setAccelerationX(-2, 0)
                 .setAccelerationY(5, 10)
                 .setInitialRotation(0, 360)
                 .setRotationSpeed(-720, 720)
                 .setAlpha(255, 0, 500)
-                .setScale(0.75f, 0, 1000)
+                .setScale(0.75f, 0, 0)
                 .setLayer(Layer.EFFECT_LAYER);
         mRightConfetti = new ParticleSystem(game, confettiId, 50)
                 .setDurationPerParticle(1500)
                 .setEmissionRate(30)
                 .setEmissionPositionX(game.getScreenWidth())
                 .setEmissionRangeY(game.getScreenHeight() / 3f, game.getScreenHeight() * 3 / 4f)
-                .setSpeedX(-1500, -1000)
+                .setSpeedX(-1500, -0)
                 .setSpeedY(-4000, -3000)
                 .setAccelerationX(0, 2)
                 .setAccelerationY(5, 10)
                 .setInitialRotation(0, 360)
                 .setRotationSpeed(-720, 720)
                 .setAlpha(255, 0, 500)
-                .setScale(0.75f, 0, 1000)
+                .setScale(0.75f, 0, 0)
                 .setLayer(Layer.EFFECT_LAYER);
     }
 
@@ -110,7 +110,7 @@ public class GameController extends GameObject implements AdManager.AdRewardList
                 break;
             case SHIFT_BUBBLE:
                 mTotalMillis += elapsedMillis;
-                if (mTotalMillis >= 1000) {
+                if (mTotalMillis >= 0) {
                     mBubbleSystem.shiftBubble();   // Shift down one time when start
                     mState = GameControllerState.START_INTRO;
                     mTotalMillis = 0;
@@ -129,7 +129,7 @@ public class GameController extends GameObject implements AdManager.AdRewardList
                     return;
                 }
                 mTotalMillis += elapsedMillis;
-                if (mTotalMillis >= 1000) {
+                if (mTotalMillis >= 0) {
                     // Remove the remaining bubble and booster
                     mBasicBubble.removeFromGame();
                     mBubbleSystem.clearBubble();
